@@ -1,5 +1,9 @@
-resource "null_resource" "helloWorld" {
+resource "null_resource" "release" {
   provisioner "local-exec" {
-    command = "echo hello world"
+    command = "cat /etc/*release"
+  }
+
+  provisioner "local-exec" {
+    command = "free -h"
   }
 }
